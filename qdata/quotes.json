@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "text": "Be yourself; everyone else is already taken.",
+    "author": "Oscar Wilde",
+    "category": "thoughtful"
+  },
+  {
+    "id": 2,
+    "text": "Happiness is not something ready made. It comes from your own actions.",
+    "author": "Dalai Lama",
+    "category": "happy"
+  },
+  {
+    "id": 3,
+    "text": "Tears come from the heart and not from the brain.",
+    "author": "Leonardo da Vinci",
+    "category": "sad"
+  },
+  {
+    "id": 4,
+    "text": "Believe you can and you're halfway there.",
+    "author": "Theodore Roosevelt",
+    "category": "thoughtful"
+  },
+  {
+    "id": 5,
+    "text": "Smile, it's free therapy.",
+    "author": "Douglas Horton",
+    "category": "happy"
+  }
+]
