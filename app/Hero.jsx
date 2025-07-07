@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from "@/components/ui/button";
-import { Sparkles, Heart, Smile, Frown } from "lucide-react";
+import { Sparkles, Heart, Smile, Frown, RotateCcw } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   Card,
@@ -17,10 +17,14 @@ const Hero = ({ quotes }) => {
   const [selectedTag, setselectedTag] = useState('')
   const [Randomquotes, setRandomquotes] = useState([])
 
-  useEffect(() => {
+ const generateQuotes = () =>{
     const filterQuotes = selectedTag ? quotes.filter(q => q.category.toLowerCase() === selectedTag.toLowerCase()) : quotes;
     const shuffle = [...filterQuotes].sort(() => {return Math.random() - 0.5}).slice(0, 3)
     setRandomquotes(shuffle)
+ }
+
+  useEffect(() => {
+    generateQuotes();
 
   }, [selectedTag])
 
@@ -28,27 +32,43 @@ const Hero = ({ quotes }) => {
   return (
     <div className="bg-gradient-to-r from-purple-800  to-amber-800 h-screen">
 
-      {/*Buttons*/}
+      {/* Buttons */}
       <div className=" flex space-x-2 justify-center">
-        <Button onClick = {() => {setselectedTag('')}} className='rounded-full bg-white/10 backdrop-blur-md shadow-xl hover:bg-white/20 hover:scale-105 transition-all duration-300 transform' size = "lg">
+        <Button onClick = {() => {setselectedTag('')}}  className={`rounded-full backdrop-blur-md shadow-xl transition-all duration-300 transform px-6 py-6 text-lg ${
+      selectedTag === '' ? 'bg-white text-black hover:scale-105 hover:text-white' : 'bg-white/10 hover:bg-white/20 hover:scale-105 text-white'
+    }`} size = "lg">
         <Sparkles/> All Quotes
       </Button>
-      <Button  onClick = {() => {setselectedTag('Thoughtful')}} className='rounded-full bg-white/10 backdrop-blur-md shadow-xl hover:bg-white/20 hover:scale-105 transition-all duration-300 transform' size = "lg"> 
+
+      <Button  onClick = {() => {setselectedTag('Thoughtful')}} className={`rounded-full backdrop-blur-md shadow-xl transition-all duration-300 transform px-6 py-6 text-lg ${
+      selectedTag === 'Thoughtful' ? 'bg-white text-black hover:scale-105 hover:text-white' : 'bg-white/10 hover:bg-white/20 hover:scale-105 text-white'
+    }`} size = "lg"> 
         <Heart/> Thoughtful
       </Button>
-      <Button onClick = {() => {setselectedTag('Happy')}} className='rounded-full bg-white/10 backdrop-blur-md shadow-xl hover:bg-white/20 hover:scale-105 transition-all duration-300 transform' size = "lg">
+
+      <Button onClick = {() => {setselectedTag('Happy')}} className={`rounded-full backdrop-blur-md shadow-xl transition-all duration-300 transform px-6 py-6 text-lg ${
+      selectedTag === 'Happy' ? 'bg-white text-black hover:scale-105 hover:text-white' : 'bg-white/10 hover:bg-white/20 hover:scale-105 text-white'
+    }`} size = "lg">
         <Smile/> Happy
       </Button>
-      <Button onClick = {() => {setselectedTag('Sad')}} className='rounded-full bg-white/10 backdrop-blur-md shadow-xl hover:bg-white/20 hover:scale-105 transition-all duration-300 transform' size = "lg">
+
+      <Button onClick = {() => {setselectedTag('Sad')}} className={`rounded-full backdrop-blur-md shadow-xl transition-all duration-300 transform px-6 py-6 text-lg ${
+      selectedTag === 'Sad' ? 'bg-white text-black hover:scale-105 hover:text-white' : 'bg-white/10 hover:bg-white/20 hover:scale-105 text-white'
+    }`} size = "lg">
         <Frown/> Sad
+      </Button>
+
+      <Button onClick={generateQuotes} className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 backdrop-blur-md shadow-xl hover:bg-white/20 hover:scale-105 transition-all duration-300 transform px-6 py-6 text-lg" size="lg">
+          <RotateCcw /> Refresh
       </Button>
       </div>
 
-      <div className="flex flex-wrap ml-16 mt-4 gap-7">
+      {/* Cards */}
+      <div className="flex flex-wrap justify-center gap-x-7 gap-y-6 mt-6">
         {
             Randomquotes.map((quote) => (
 
-                <Card key = {quote.id} className="w-[500px] h-auto p-6 bg-white/10 border border-white/20 backdrop-blur-md text-white rounded-2xl shadow-xl my-[4rem]">
+                <Card key = {quote.id} className="w-[500px] h-auto p-6 bg-white/10 border border-white/20 backdrop-blur-md text-white rounded-2xl shadow-xl">
                 <CardHeader>
                     <CardTitle>Quote of the Day</CardTitle>
                     <CardDescription className={'text-gray-300'}>{quote.category.toUpperCase()}</CardDescription>
@@ -64,8 +84,6 @@ const Hero = ({ quotes }) => {
         }
          
       </div>
-     
-
     </div>
   );
 }

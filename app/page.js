@@ -1,4 +1,4 @@
-{/*for now it's static but we have to add client side logic in it */}
+{/* Server-Side */}
 
 import fs from 'fs'
 import path from 'path'

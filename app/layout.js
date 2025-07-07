@@ -1,4 +1,5 @@
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,13 +20,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="bg-gradient-to-r from-purple-800  to-amber-800 p-3">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <NavBar/>
-        {children}
-
+    <html lang="en" className="bg-gradient-to-r from-purple-800 to-amber-800">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <NavBar />
+          {children}
+        <Footer />
       </body>
     </html>
   );
