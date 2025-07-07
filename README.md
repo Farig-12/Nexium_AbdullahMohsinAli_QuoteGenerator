@@ -1,6 +1,6 @@
 ## InspireIt
 
->  A beautifully designed quote browser app built using Next.js 14 App Router, Tailwind CSS, and shadcn/ui. Users can browse quotes by category and shuffle through them with ease.
+- A beautifully designed quote browser app built using Next.js 14 App Router, Tailwind CSS, and shadcn/ui. Users can browse quotes by category and shuffle through them with ease.
 
 ---
 
@@ -47,9 +47,11 @@ pnpm install
 ```
 
 ### 3. Run the dev server
+```bash
 pnpm dev
 # or
 npm run dev
+```
 
 
 ### 4. Tech Stack
