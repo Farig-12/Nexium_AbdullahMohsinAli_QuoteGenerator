@@ -32,28 +32,28 @@ Hero.jsx # Client component for displaying UI
 ## 🚀 Getting Started
 
 ### 1. Clone the repo
-
 ```bash
-git clone https://github.com/yourusername/quoteverse.git
+git clone https://github.com/yourusername/InspireIt.git
 cd InspireIt
+```
 
-### 1. Clone the repo
-Using pnpm (recommended):
+---
+### 2. Clone the repo
+```bash
+#Using pnpm (recommended):
 
-bash
-Copy
-Edit
 pnpm install
 
-3. Run the dev server
-bash
-Copy
-Edit
+```
+
+### 3. Run the dev server
 pnpm dev
 # or
 npm run dev
 
-Tech Stack
+
+### 4. Tech Stack
+
 Next.js 14 – App Router (Server + Client components)
 
 Tailwind CSS – Utility-first styling
@@ -62,15 +62,13 @@ shadcn/ui – Reusable component system
 
 Lucide Icons – Beautiful icon set
 
-Data Source
+---
+
+### Data Source
 /qdata/quotes.json
 
-License
+### License
 License © 2025 InspireIt
-
-yaml
-Copy
-Edit
 
 ---
 
@@ -80,3 +78,4 @@ Let me know if you'd like to:
 - Link GitHub repo or preview site
 
 I'll adjust accordingly!
+
